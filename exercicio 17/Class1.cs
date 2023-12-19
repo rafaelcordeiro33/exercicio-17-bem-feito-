@@ -8,26 +8,11 @@ namespace exercicio_17
         public static string nome;
         public static string email;
         public static string password;
-        public static List<Registro> Registros = new List<Registro>();
+        public static List<(string Nome, string Email, string Password)> Registros = new List<(string, string, string)>();
 
         public static void AdicionarRegistro(string nome, string email, string password)
         {
-            Registros.Add(new Registro(nome, email, password));
-        }
-    }
-
-    public class Registro
-    {
-        public string Nome { get; }
-        public string Email { get; }
-        public string Password { get; }
-
-        public Registro(string nome, string email, string password)
-        {
-            Nome = nome;
-            Email = email;
-            Password = password;
+            Registros.Add((nome, email, password));
         }
     }
 }
-

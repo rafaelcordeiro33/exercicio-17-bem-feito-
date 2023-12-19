@@ -26,8 +26,20 @@ namespace exercicio_17
             Class1.nome = Nome_txt.Text;
             Class1.email = Email_txt.Text;
             Class1.password = Password_txt.Text;
-            if (Class1.nome == "" | Class1.email == "" | Class1.password == "")
-            { MessageBox.Show("Tem de preencher todos as caixas de texto", "Erro", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error); }
+            if (Class1.nome == "" && Class1.email == "" && Class1.password == "")
+            {MessageBox.Show("Tem de preencher todos os campos", "Erro", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);}
+            else if (Class1.nome == "" && Class1.email == "")
+            {MessageBox.Show("Tem de preencher o nome e o email", "Erro", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);}
+            else if (Class1.nome == "" && Class1.password == "")
+            {MessageBox.Show("Tem de preencher o nome e a password", "Erro", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);}
+            else if (Class1.email == "" && Class1.password == "")
+            {MessageBox.Show("Tem de preencher o email e a password", "Erro", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);}
+            else if (Class1.nome == "")
+            {MessageBox.Show("Tem de preencher o nome", "Erro", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);}
+            else if (Class1.email == "")
+            {MessageBox.Show("Tem de preencher o email", "Erro", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);}
+            else if (Class1.password == "")
+            {MessageBox.Show("Tem de preencher a password", "Erro", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);}
             else
             {
                 Class1.AdicionarRegistro(Nome_txt.Text, Email_txt.Text, Password_txt.Text);
